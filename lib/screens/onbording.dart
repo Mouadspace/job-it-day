@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/custom_button.dart';
+
 class OnBording extends StatelessWidget {
   const OnBording({super.key});
 
@@ -9,6 +11,7 @@ class OnBording extends StatelessWidget {
       backgroundColor: Colors.white,
       body: SafeArea(
         child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
           child: SizedBox(
             width: double.maxFinite,
             child: Column(
@@ -49,50 +52,20 @@ class OnBording extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 40),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 40),
-                  child: TextButton(
-                    style: TextButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      minimumSize: const Size.fromHeight(52),
-                      side: BorderSide(
-                        color: Theme.of(context).colorScheme.primary,
-                        width: 3,
-                      ),
-                    ),
-                    onPressed: () => Navigator.pushNamed(context, '/user'),
-                    child: Text(
-                      'SE CONNECTER',
-                      style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600,
-                          color: Theme.of(context).colorScheme.primary),
-                    ),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 40),
+                  child: CustomButton(
+                    outline: true,
+                    text: 'SE CONNECTER',
                   ),
                 ),
-                Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 40, vertical: 16),
-                    child: TextButton(
-                      style: TextButton.styleFrom(
-                        backgroundColor: Theme.of(context).colorScheme.primary,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        minimumSize: const Size.fromHeight(52),
-                      ),
-                      onPressed: () => Navigator.pushNamed(context, '/user'),
-                      child: const Text(
-                        "S'INSCRIRE",
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ))
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 40, vertical: 16),
+                  child: CustomButton(
+                    outline: false,
+                    text: 'S\'INSCRIRE',
+                  ),
+                )
               ],
             ),
           ),
