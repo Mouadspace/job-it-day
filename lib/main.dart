@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
-
-import '../screens/user_type.dart';
-import '../screens/onbording.dart';
+import 'package:get/get.dart';
+import 'utils/mybindings.dart';
+import 'view/screens/unknown-route/unknow_page.dart';
+import 'view/screens/auth/sign_up.dart';
+import 'view/screens/test_screen.dart';
+import 'view/screens/auth/sign_in.dart';
+import 'view/screens/user_type.dart';
+import 'view/screens/onbording.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,30 +17,53 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    const Color greyColor = Color(0xff495057);
+    const Color primaryColor = Color(0xff1864ab);
+    const Color secondaryColor = Color(0xffab5f18);
+
+    const FontWeight semiBold = FontWeight.w600;
+
+    return GetMaterialApp(
       title: 'Job It Day',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: 'Inter',
         textTheme: const TextTheme(
+          labelLarge: TextStyle(
+            color: greyColor,
+            fontSize: 18,
+          ),
+          labelSmall: TextStyle(
+            fontSize: 16,
+            color: greyColor,
+          ),
           titleLarge: TextStyle(
             fontSize: 24,
-            fontWeight: FontWeight.w600,
-            color: Color(0xff212529),
+            fontWeight: semiBold,
+            color: greyColor,
+          ),
+          titleMedium: TextStyle(
+            fontSize: 20,
+            fontWeight: semiBold,
+            color: greyColor,
           ),
         ),
         colorScheme:
             ColorScheme.fromSwatch(primarySwatch: Colors.blue).copyWith(
-          primary: const Color(0xff1864ab),
-          secondary: const Color(0xffab5f18),
+          primary: primaryColor,
+          secondary: secondaryColor,
         ),
       ),
-      initialRoute: '/onbording',
-      routes: {
-        "/onbording": (context) => const OnBording(),
-        "/user": (context) => const UserType(),
-      },
-      home: const OnBording(),
+      initialBinding: MyBindings(),
+      initialRoute: '/',
+      unknownRoute: GetPage(name: '/notfound', page: () => const UnknownPage()),
+      getPages: [
+        GetPage(name: '/', page: () => const OnBording()),
+        GetPage(name: "/user", page: () => const UserType()),
+        GetPage(name: "/signin", page: () => const SignIn()),
+        GetPage(name: "/signup", page: () => const SignUp()),
+        GetPage(name: "/test", page: () => TestScreen()),
+      ],
     );
   }
 }

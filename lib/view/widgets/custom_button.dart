@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 class CustomButton extends StatelessWidget {
   final bool outline;
   final String text;
+  final Function onTabHandler;
   const CustomButton({
     super.key,
     required this.outline,
     required this.text,
+    required this.onTabHandler,
   });
 
   @override
@@ -24,7 +26,7 @@ class CustomButton extends StatelessWidget {
           width: 3,
         ),
       ),
-      onPressed: () => Navigator.pushNamed(context, '/user'),
+      onPressed: () => onTabHandler(),
       child: Text(text,
           style: TextStyle(
             fontSize: 18,

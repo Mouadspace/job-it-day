@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../widgets/custom_button.dart';
 
@@ -52,18 +53,20 @@ class OnBording extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 40),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 40),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 40),
                   child: CustomButton(
-                    outline: true,
-                    text: 'SE CONNECTER',
-                  ),
+                      outline: true,
+                      text: 'SE CONNECTER',
+                      onTabHandler: () => Get.toNamed('/user')),
                 ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 40, vertical: 16),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 40, vertical: 16),
                   child: CustomButton(
                     outline: false,
                     text: 'S\'INSCRIRE',
+                    onTabHandler: () => Get.toNamed('/signup'),
                   ),
                 )
               ],

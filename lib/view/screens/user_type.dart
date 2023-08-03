@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../widgets/auth_as_container.dart';
 
@@ -21,10 +22,13 @@ class UserType extends StatelessWidget {
                 style: Theme.of(context).textTheme.titleLarge,
               ),
             ),
-            const AuthAsContainer(
-              authType: 'Entreprise',
-              img: 'assets/images/entreprise-img.png',
-              color: Color(0xffF99746),
+            GestureDetector(
+              onTap: () => Get.toNamed('/signin'),
+              child: const AuthAsContainer(
+                authType: 'Entreprise',
+                img: 'assets/images/entreprise-img.png',
+                color: Color(0xffF99746),
+              ),
             ),
             const SizedBox(height: 40),
             const AuthAsContainer(
