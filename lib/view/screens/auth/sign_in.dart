@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:jobitday/view/widgets/custom_input.dart';
 
 import '../../widgets/custom_button.dart';
 import '../../widgets/custom_password_input.dart';
@@ -9,10 +10,6 @@ class SignIn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const TextStyle hintStyle = TextStyle(
-      color: Color.fromRGBO(0, 0, 0, 0.5),
-      fontSize: 16,
-    );
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -43,18 +40,7 @@ class SignIn extends StatelessWidget {
                 style: Theme.of(context).textTheme.labelLarge,
               ),
               const SizedBox(height: 15),
-              TextField(
-                keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(
-                  isDense: true,
-                  hintText: "email@gmail.com",
-                  hintStyle: hintStyle,
-                  border: OutlineInputBorder(
-                    borderSide: const BorderSide(width: 2),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                ),
-              ),
+              const CustomInput(hintText: "email@gmail.com"),
               const SizedBox(height: 40),
               Text(
                 'Mot de passe',
