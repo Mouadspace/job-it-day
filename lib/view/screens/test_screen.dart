@@ -7,7 +7,7 @@ int counter = 0;
 class TestScreen extends StatelessWidget {
   TestScreen({super.key});
 
-  final TestController controller = Get.put(TestController());
+  final TestController controller = Get.put(TestController(), permanent: true);
   @override
   Widget build(BuildContext context) {
     return Scaffold(body: Center(

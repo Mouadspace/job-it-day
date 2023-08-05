@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 class CustomPasswordInput extends StatefulWidget {
   final String hintText;
+  final TextEditingController controller;
   const CustomPasswordInput({
     super.key,
     required this.hintText,
+    required this.controller,
   });
 
   @override
@@ -13,8 +16,8 @@ class CustomPasswordInput extends StatefulWidget {
 }
 
 class _CustomPasswordInputState extends State<CustomPasswordInput> {
-  bool isVisible = false;
-  String iconImg = 'assets/svgs/eye.svg';
+  bool isVisible = true;
+  String iconImg = 'assets/svgs/eye-slash.svg';
   @override
   Widget build(BuildContext context) {
     const TextStyle hintStyle = TextStyle(
@@ -22,7 +25,16 @@ class _CustomPasswordInputState extends State<CustomPasswordInput> {
       fontSize: 16,
     );
 
-    return TextField(
+    return TextFormField(
+      controller: widget.controller,
+      validator: (value) {
+        var val = widget.controller.text.length;
+        debugPrint('password validator : $val');
+        if (!GetUtils.isGreaterThan(val, 6)) {
+          return "mot de passe doit être de 7 à 30 caractères";
+        }
+        return null;
+      },
       keyboardType: TextInputType.visiblePassword,
       obscureText: isVisible,
       decoration: InputDecoration(

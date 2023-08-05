@@ -26,7 +26,11 @@ class CustomButton extends StatelessWidget {
           width: 3,
         ),
       ),
-      onPressed: () => onTabHandler(),
+      onPressed: () {
+        onTabHandler();
+        print("Pressed");
+        print(onTabHandler);
+      },
       child: Text(text,
           style: TextStyle(
             fontSize: 18,

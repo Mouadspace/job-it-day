@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CustomInput extends StatelessWidget {
-  final hintText;
-  const CustomInput({super.key, required this.hintText});
+  final TextEditingController controller;
+  final String hintText;
+  const CustomInput(
+      {super.key, required this.hintText, required this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +13,14 @@ class CustomInput extends StatelessWidget {
       color: Color.fromRGBO(0, 0, 0, 0.5),
       fontSize: 16,
     );
-    return TextField(
+    return TextFormField(
+      controller: controller,
+      validator: (value) {
+        if (!GetUtils.isEmail(controller.text)) {
+          return "email address invalid";
+        }
+        return null;
+      },
       keyboardType: TextInputType.visiblePassword,
       decoration: InputDecoration(
         isDense: true,
