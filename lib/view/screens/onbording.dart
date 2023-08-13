@@ -58,7 +58,7 @@ class OnBording extends StatelessWidget {
                   child: CustomButton(
                       outline: true,
                       text: 'SE CONNECTER',
-                      onTabHandler: () => Get.toNamed('/user')),
+                      onTabHandler: () => Get.toNamed('/signin')),
                 ),
                 Padding(
                   padding:
@@ -66,7 +66,7 @@ class OnBording extends StatelessWidget {
                   child: CustomButton(
                     outline: false,
                     text: 'S\'INSCRIRE',
-                    onTabHandler: () => Get.toNamed('/signup'),
+                    onTabHandler: () => Get.toNamed('/user'),
                   ),
                 )
               ],

@@ -810,9 +810,10 @@ class _CustomStepperState extends State<CustomStepper>
     }
 
     return Container(
-      // color: Colors.lime,
+      // color: Colors.blue,
       height: MediaQuery.of(context).size.height - 60,
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           Material(
             // elevation: widget.elevation ?? 2,
@@ -827,10 +828,10 @@ class _CustomStepperState extends State<CustomStepper>
             curve: Curves.fastOutSlowIn,
             duration: kThemeAnimationDuration,
             child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: stepPanels),
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: stepPanels,
+            ),
           ),
-          Spacer(),
           _buildVerticalControls(widget.currentStep),
         ],
       ),

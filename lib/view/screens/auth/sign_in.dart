@@ -83,7 +83,7 @@ class SignIn extends StatelessWidget {
                       style: Theme.of(context).textTheme.labelSmall,
                     ),
                     GestureDetector(
-                      onTap: () => Get.toNamed('/signup'),
+                      onTap: () => Get.toNamed('/user'),
                       child: Text(
                         's\'inscrire',
                         style: Theme.of(context).textTheme.labelSmall!.copyWith(

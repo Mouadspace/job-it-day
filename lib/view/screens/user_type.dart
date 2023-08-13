@@ -23,7 +23,7 @@ class UserType extends StatelessWidget {
               ),
             ),
             GestureDetector(
-              onTap: () => Get.toNamed('/signin'),
+              onTap: () => Get.toNamed('/signup'),
               child: const AuthAsContainer(
                 authType: 'Entreprise',
                 img: 'assets/images/entreprise-img.png',
