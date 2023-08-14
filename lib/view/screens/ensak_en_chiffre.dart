@@ -8,25 +8,25 @@ class EnsakChiffre extends StatelessWidget {
   EnsakChiffre({super.key});
 
   // All the svg icons needed
-  SvgPicture etudiant = SvgPicture.asset(
+  final SvgPicture etudiant = SvgPicture.asset(
     'assets/svgs/graduation-cap-solid.svg',
     color: Colors.white,
     width: 35,
     height: 35,
   );
-  SvgPicture professeur = SvgPicture.asset(
+  final SvgPicture professeur = SvgPicture.asset(
     'assets/svgs/briefcase-solid.svg',
     color: Colors.white,
     width: 35,
     height: 35,
   );
-  SvgPicture administration = SvgPicture.asset(
+  final SvgPicture administration = SvgPicture.asset(
     'assets/svgs/building-columns-solid.svg',
     color: Colors.white,
     width: 35,
     height: 35,
   );
-  SvgPicture formation = SvgPicture.asset(
+  final SvgPicture formation = SvgPicture.asset(
     'assets/svgs/book-solid.svg',
     color: Colors.white,
     width: 35,
@@ -37,49 +37,54 @@ class EnsakChiffre extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'ENSAK en chiffres',
-              style: Theme.of(context).textTheme.titleLarge,
-            ),
-            SizedBox(height: 16),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildCircleColumn(1697, 'Etudiants', etudiant),
-                // SizedBox(
-                //   width: 25,
-                // ),
-                _buildCircleColumn(60, 'Professeurs', professeur),
+                Text(
+                  'ENSAK en chiffres',
+                  style: Theme.of(context).textTheme.titleLarge,
+                ),
+                SizedBox(height: 16),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    _buildCircleColumn(1697, 'Etudiants', etudiant),
+                    // SizedBox(
+                    //   width: 25,
+                    // ),
+                    _buildCircleColumn(60, 'Professeurs', professeur),
+                  ],
+                ),
+                SizedBox(height: 25),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    _buildCircleColumn(28, 'Administatifs', administration),
+                    // SizedBox(
+                    //   width: 25,
+                    // ),
+                    _buildCircleColumn(10, 'Formations', formation),
+                  ],
+                ),
+                SizedBox(height: 29),
+                Text(
+                  'Présentation',
+                  style: Theme.of(context).textTheme.titleLarge,
+                ),
+                SizedBox(
+                  height: 8,
+                ),
+                Text(
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                ),
               ],
             ),
-            SizedBox(height: 25),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                _buildCircleColumn(28, 'Administatifs', administration),
-                // SizedBox(
-                //   width: 25,
-                // ),
-                _buildCircleColumn(10, 'Formations', formation),
-              ],
-            ),
-            SizedBox(height: 29),
-            Text(
-              'Prése,ntation',
-              style: Theme.of(context).textTheme.titleLarge,
-            ),
-            SizedBox(
-              height: 8,
-            ),
-            Text(
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            ),
-          ],
+          ),
         ),
       ),
     );

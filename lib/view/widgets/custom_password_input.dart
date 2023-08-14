@@ -4,11 +4,13 @@ import 'package:get/get.dart';
 
 class CustomPasswordInput extends StatefulWidget {
   final String hintText;
-  final TextEditingController controller;
-  const CustomPasswordInput({
+  final List<TextEditingController> controller;
+  bool? confirmer = false;
+  CustomPasswordInput({
     super.key,
     required this.hintText,
     required this.controller,
+    this.confirmer,
   });
 
   @override
@@ -26,13 +28,18 @@ class _CustomPasswordInputState extends State<CustomPasswordInput> {
     );
 
     return TextFormField(
-      controller: widget.controller,
+      controller: widget.controller[0],
       validator: (value) {
-        var val = widget.controller.text.length;
-        debugPrint('password validator : $val');
+        var val = widget.controller[0].text.length;
         if (!GetUtils.isGreaterThan(val, 6)) {
           return "mot de passe doit être de 7 à 30 caractères";
         }
+        if (widget.controller.length > 1) {
+          if (widget.controller[0].text != widget.controller[1].text) {
+            return 'le mot de passe ne correspond pas';
+          }
+        }
+
         return null;
       },
       keyboardType: TextInputType.visiblePassword,

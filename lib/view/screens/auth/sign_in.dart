@@ -11,7 +11,6 @@ class SignIn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final formKey = GlobalKey<FormState>();
-    final emailController = TextEditingController();
     final pswController = TextEditingController();
 
     return Scaffold(
@@ -48,7 +47,12 @@ class SignIn extends StatelessWidget {
                 const SizedBox(height: 15),
                 CustomInput(
                   hintText: "email@gmail.com",
-                  controller: emailController,
+                  validator: (value) {
+                    if (!GetUtils.isEmail(value.toString())) {
+                      return "email address invalid";
+                    }
+                    return null;
+                  },
                 ),
                 const SizedBox(height: 40),
                 Text(
@@ -58,7 +62,7 @@ class SignIn extends StatelessWidget {
                 const SizedBox(height: 15),
                 CustomPasswordInput(
                   hintText: "entrez votre mot de passe",
-                  controller: pswController,
+                  controller: [pswController],
                 ),
                 const SizedBox(height: 10),
                 Align(
