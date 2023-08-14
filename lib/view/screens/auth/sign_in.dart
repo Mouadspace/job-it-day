@@ -47,7 +47,9 @@ class SignIn extends StatelessWidget {
                 ),
                 const SizedBox(height: 15),
                 CustomInput(
-                    hintText: "email@gmail.com", controller: emailController),
+                  hintText: "email@gmail.com",
+                  controller: emailController,
+                ),
                 const SizedBox(height: 40),
                 Text(
                   'Mot de passe',
