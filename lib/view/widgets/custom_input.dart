@@ -5,7 +5,10 @@ class CustomInput extends StatelessWidget {
   final TextEditingController controller;
   final String hintText;
   const CustomInput(
-      {super.key, required this.hintText, required this.controller});
+      {super.key, 
+      required this.hintText, 
+      required this.controller
+      });
 
   @override
   Widget build(BuildContext context) {

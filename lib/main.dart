@@ -7,6 +7,7 @@ import 'view/screens/test_screen.dart';
 import 'view/screens/auth/sign_in.dart';
 import 'view/screens/user_type.dart';
 import 'view/screens/onbording.dart';
+import 'view/screens/ensak_en_chiffre.dart';
 
 void main() {
   runApp(const MyApp());
@@ -54,15 +55,25 @@ class MyApp extends StatelessWidget {
           secondary: secondaryColor,
         ),
       ),
-      initialBinding: MyBindings(),
-      initialRoute: '/',
+      initialBinding: MyBindings(), // what is this propertity "initialBinding"?
+      // not important! ^^^^^^^ At the moment.
+      initialRoute: '/', // Same here for the propertity?
+      // the main is '/',
       unknownRoute: GetPage(name: '/notfound', page: () => const UnknownPage()),
+      // What are we exactly doing above?
+
+      // Down here, look for the one in the matirial package.
+      // Answer:
+      // routes: {
+      //   'String': (context) => const SignIn(),
+      // },
       getPages: [
         GetPage(name: '/', page: () => const OnBording()),
         GetPage(name: "/user", page: () => const UserType()),
         GetPage(name: "/signin", page: () => const SignIn()),
         GetPage(name: "/signup", page: () => const SignUp()),
         GetPage(name: "/test", page: () => TestScreen()),
+        GetPage(name: "/ensak_en_chiffre", page: () => EnsakChiffre()),
       ],
     );
   }
