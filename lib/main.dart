@@ -9,6 +9,7 @@ import 'view/screens/user_type.dart';
 import 'view/screens/onbording.dart';
 import 'view/screens/ensak_en_chiffre.dart';
 import 'view/screens/chercher_etudiant.dart';
+import 'view/screens/error_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -75,8 +76,9 @@ class MyApp extends StatelessWidget {
         GetPage(name: "/signup", page: () => const SignUp()),
         GetPage(name: "/test", page: () => TestScreen()),
         GetPage(name: "/ensak_en_chiffre", page: () => EnsakChiffre()),
-        // GetPage(name: "/profile_etudiant", page: () => SearchStudent()),
-        GetPage(name: "/", page: () => SearchStudent()),
+        GetPage(name: "/profile_etudiant", page: () => SearchStudent()),
+        // GetPage(name: "/error_page", page: () => SomethingWrong()),
+        GetPage(name: "/", page: () => SomethingWrong()),
       ],
     );
   }
