@@ -1,26 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class SomethingWrong extends StatelessWidget {
-  SomethingWrong({super.key});
+class InscriptionDone extends StatelessWidget {
+  InscriptionDone({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ErrorPage(),
+      home: SuccessPage(),
     );
   }
 }
 
-class ErrorPage extends StatefulWidget {
-  const ErrorPage({Key? key}) : super(key: key);
+class SuccessPage extends StatefulWidget {
+  const SuccessPage({Key? key}) : super(key: key);
 
   @override
-  State<ErrorPage> createState() => _ErrorPageState();
+  State<SuccessPage> createState() => _SuccessPageState();
 }
 
-class _ErrorPageState extends State<ErrorPage> {
+class _SuccessPageState extends State<SuccessPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +31,7 @@ class _ErrorPageState extends State<ErrorPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SvgPicture.asset(
-                "assets/svgs/error.svg",
+                "assets/svgs/check-icon.svg",
                 height: 149,
                 width: 149,
               ),
@@ -39,22 +39,22 @@ class _ErrorPageState extends State<ErrorPage> {
                 height: 30,
               ),
               Text(
-                "OH NO ...",
+                "C\'est Bien Fait!",
                 style: TextStyle(
                   fontSize: 24.0,
                   fontWeight: FontWeight.bold,
-                  color: Color.fromRGBO(176, 0, 32, 1.0),
+                  color: Color.fromRGBO(24, 100, 171, 1.0),
                 ),
               ),
               SizedBox(
                 height: 30,
               ),
               Text(
-                "Quelque chose s\'est mal passé.",
+                "Félicitations, votre compte a été",
                 style: TextStyle(fontSize: 16.0),
               ),
               Text(
-                "Essayer encore un fois.",
+                "créé avec succès",
                 style: TextStyle(fontSize: 16.0),
               ),
               SizedBox(
@@ -62,18 +62,20 @@ class _ErrorPageState extends State<ErrorPage> {
               ),
               MaterialButton(
                 child: Text(
-                  'Réessayer',
+                  'Suivant',
                   style: TextStyle(
                     fontSize: 18,
                   ),
                 ),
-                color: Color.fromRGBO(176, 0, 32, 1.0),
+                color: Color.fromRGBO(24, 100, 171, 1.0),
                 textColor: Colors.white,
                 padding: EdgeInsets.symmetric(horizontal: 50, vertical: 25),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(40.0),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  // Enters to the personal profile weather it's a company or a student
+                },
               ),
             ],
           ),
