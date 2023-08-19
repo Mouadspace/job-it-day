@@ -4,26 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../model/ensak_stats_model.dart';
 
 class EnsakChiffre extends StatelessWidget {
-  EnsakChiffre({super.key});
-
-  // All the svg icons needed
-  final SvgPicture studentIcon = SvgPicture.asset(
-    'assets/svgs/students.svg',
-    colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
-  );
-  final SvgPicture teacherIcon = SvgPicture.asset(
-    'assets/svgs/teachers.svg',
-    colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
-  );
-  final SvgPicture administrationIcon = SvgPicture.asset(
-    'assets/svgs/administration.svg',
-    colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
-  );
-  final SvgPicture formationIcon = SvgPicture.asset(
-    'assets/svgs/formation.svg',
-    colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
-  );
-  // --------------------------------
+  const EnsakChiffre({super.key});
 
   @override
   Widget build(BuildContext context) {
