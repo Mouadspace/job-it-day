@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:jobitday/view/screens/company-screens/base_screen.dart';
+import 'package:jobitday/view/screens/company-screens/edit_profile.dart';
 
 import 'utils/mybindings.dart';
 import 'view/screens/auth/sign_up.dart';
@@ -74,6 +75,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: "/error_page", page: () => const SomethingWrong()),
         GetPage(name: "/success_page", page: () => const InscriptionDone()),
         GetPage(name: "/base", page: () => BaseScreen()),
+        GetPage(name: "/edit_profile", page: () => EditProfile()),
       ],
     );
   }

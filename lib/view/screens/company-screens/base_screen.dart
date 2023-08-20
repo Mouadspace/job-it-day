@@ -38,7 +38,7 @@ class BaseScreen extends StatelessWidget {
     DrawerItems(
       icon: SvgPicture.asset('assets/svgs/settings.svg'),
       label: 'Settings',
-      screen: const Settings(),
+      screen: Settings(),
     ),
   ];
 
