@@ -58,7 +58,7 @@ class OnBording extends StatelessWidget {
                   child: CustomButton(
                       outline: true,
                       text: 'SE CONNECTER',
-                      onTabHandler: () => Get.toNamed('/signin')),
+                      onTabHandler: () => Get.toNamed('/base')),
                 ),
                 Padding(
                   padding:

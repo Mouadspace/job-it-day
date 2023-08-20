@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:jobitday/view/screens/company-screens/base_screen.dart';
+
 import 'utils/mybindings.dart';
 import 'view/screens/auth/sign_up.dart';
 import 'view/screens/contact_us.dart';
@@ -8,7 +10,7 @@ import 'view/screens/auth/sign_in.dart';
 import 'view/screens/user_type.dart';
 import 'view/screens/onbording.dart';
 import 'view/screens/ensak_en_chiffre.dart';
-import 'view/screens/students.dart';
+import 'view/screens/company-screens/students.dart';
 import 'view/screens/flash-message/error_page.dart';
 import 'view/screens/flash-message/success_page.dart';
 
@@ -71,6 +73,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: "/students", page: () => const Students()),
         GetPage(name: "/error_page", page: () => const SomethingWrong()),
         GetPage(name: "/success_page", page: () => const InscriptionDone()),
+        GetPage(name: "/base", page: () => BaseScreen()),
       ],
     );
   }
