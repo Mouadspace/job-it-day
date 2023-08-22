@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobitday/model/students_model.dart';
 
-import '../widgets/student_card.dart';
+import '../../widgets/student_card.dart';
 
 class Students extends StatefulWidget {
   const Students({Key? key}) : super(key: key);
@@ -26,14 +26,13 @@ class _StudentsState extends State<Students> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 120),
+            const SizedBox(height: 50),
             Text(
               'Etudiants',
               style: Theme.of(context).textTheme.titleLarge,
