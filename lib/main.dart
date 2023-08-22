@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'utils/mybindings.dart';
 import 'view/screens/auth/sign_up.dart';
 import 'view/screens/contact_us.dart';
+import 'view/screens/company_profile.dart';
+import 'view/screens/student_profile.dart';
 import 'view/screens/test_screen.dart';
 import 'view/screens/auth/sign_in.dart';
 import 'view/screens/user_type.dart';
@@ -61,7 +63,7 @@ class MyApp extends StatelessWidget {
       initialBinding: MyBindings(),
       initialRoute: '/',
       getPages: [
-        GetPage(name: '/', page: () => const OnBording()),
+        // GetPage(name: '/', page: () => const OnBording()),
         GetPage(name: "/user", page: () => const UserType()),
         GetPage(name: "/signin", page: () => const SignIn()),
         GetPage(name: "/signup", page: () => const SignUp()),
@@ -69,6 +71,8 @@ class MyApp extends StatelessWidget {
         GetPage(name: "/ensak_en_chiffre", page: () => const EnsakChiffre()),
         GetPage(name: "/contact_us", page: () => const ContactUs()),
         GetPage(name: "/students", page: () => const Students()),
+        GetPage(name: "/student_profile", page: () => const CompanyProfile()),
+        GetPage(name: "/", page: () => const StudentProfile()),
         GetPage(name: "/error_page", page: () => const SomethingWrong()),
         GetPage(name: "/success_page", page: () => const InscriptionDone()),
       ],
