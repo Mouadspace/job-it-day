@@ -5,7 +5,7 @@ import 'package:jobitday/view/screens/company-screens/offers.dart';
 import 'package:jobitday/view/screens/company-screens/students.dart';
 
 import '../../../controller/side_bar_controller.dart';
-import 'profile.dart';
+import 'company_profile.dart';
 import 'dashboard.dart';
 import 'settings.dart';
 
@@ -18,7 +18,7 @@ class BaseScreen extends StatelessWidget {
     DrawerItems(
       icon: SvgPicture.asset('assets/svgs/home.svg'),
       label: 'Profile',
-      screen: const Profile(),
+      screen: const CompanyProfile(),
     ),
     DrawerItems(
       icon: SvgPicture.asset('assets/svgs/dashboard.svg'),

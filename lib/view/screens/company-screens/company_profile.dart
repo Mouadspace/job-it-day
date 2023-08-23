@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../model/companys_model.dart';
-import '../widgets/custom_profile_introduction.dart';
-import '../widgets/post_card.dart';
+import '../../../model/companys_model.dart';
+import '../../widgets/custom_profile_introduction.dart';
+import '../../widgets/post_card.dart';
 
 class CompanyProfile extends StatelessWidget {
   const CompanyProfile({super.key});
@@ -12,7 +12,7 @@ class CompanyProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<CompanyPost> displayList = List.from(postsList);
-    print(displayList);
+    debugPrint('$displayList');
 
     return Scaffold(
       backgroundColor: Colors.white,

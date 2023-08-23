@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-import '../../model/students_model.dart';
-import '../widgets/custom_profile_introduction.dart';
-import '../widgets/experience_card.dart';
-import '../widgets/skill_card.dart';
+import '../../../model/students_model.dart';
+import '../../widgets/custom_profile_introduction.dart';
+import '../../widgets/experience_card.dart';
+import '../../widgets/skill_card.dart';
 
 class StudentProfile extends StatelessWidget {
   const StudentProfile({super.key});
@@ -12,12 +13,9 @@ class StudentProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Here we just taking an example from the students_model
-    // Which should be given from the api which the neccessary data
-    List<StudentModel> displayList = List.from(studentsList);
-    StudentModel exampleStudent = displayList[1];
-    List<Experience>? exampleStudentExperiences = exampleStudent.experiences;
-    List<Skill>? exampleStudentSkills = exampleStudent.skills;
+    StudentModel student = Get.arguments;
+    List<Experience>? studentExperiences = student.experiences;
+    List<Skill>? studentSkills = student.skills;
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -28,11 +26,11 @@ class StudentProfile extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CustomProfileIntroduction(
-              profileTitle: exampleStudent.name,
-              profileSubTitle: exampleStudent.educationGrade,
-              profileImage: exampleStudent.imagePath,
-              profileBeginningTitle: exampleStudent.beginningTitle,
-              profileButtonText: exampleStudent.blueBarButtons.buttonText,
+              profileTitle: student.name,
+              profileSubTitle: student.educationGrade,
+              profileImage: student.imagePath,
+              profileBeginningTitle: student.beginningTitle,
+              profileButtonText: student.blueBarButtons.buttonText,
               // profileButtonClicked: directToEmail(),
             ),
             // For posts (Annonces)
@@ -47,10 +45,10 @@ class StudentProfile extends StatelessWidget {
             ListView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
-              itemCount: exampleStudentExperiences?.length ?? 0,
+              itemCount: studentExperiences?.length ?? 0,
               itemBuilder: (context, index) {
-                if (exampleStudentExperiences != null) {
-                  return ExperienceCard(item: exampleStudentExperiences[index]);
+                if (studentExperiences != null) {
+                  return ExperienceCard(item: studentExperiences[index]);
                 } else {
                   return Container();
                 }
@@ -69,10 +67,10 @@ class StudentProfile extends StatelessWidget {
             ListView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
-              itemCount: exampleStudentSkills?.length ?? 0,
+              itemCount: studentSkills?.length ?? 0,
               itemBuilder: (context, index) {
-                if (exampleStudentSkills != null) {
-                  return SkillCard(item: exampleStudentSkills[index]);
+                if (studentSkills != null) {
+                  return SkillCard(item: studentSkills[index]);
                 } else {
                   return Container();
                 }
