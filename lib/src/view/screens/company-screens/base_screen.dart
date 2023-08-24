@@ -1,46 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:jobitday/view/screens/company-screens/offers.dart';
-import 'package:jobitday/view/screens/company-screens/students.dart';
 
+import '../../../../core/app_data.dart';
 import '../../../controller/side_bar_controller.dart';
-import 'company_profile.dart';
-import 'dashboard.dart';
-import 'settings.dart';
 
 class BaseScreen extends StatelessWidget {
   BaseScreen({super.key});
 
   final SideBarController controller = Get.find();
-
-  final List<DrawerItems> drawerItems = [
-    DrawerItems(
-      icon: SvgPicture.asset('assets/svgs/home.svg'),
-      label: 'Profile',
-      screen: const CompanyProfile(),
-    ),
-    DrawerItems(
-      icon: SvgPicture.asset('assets/svgs/dashboard.svg'),
-      label: 'Dashboard',
-      screen: const Dashboard(),
-    ),
-    DrawerItems(
-      icon: SvgPicture.asset('assets/svgs/students-group.svg'),
-      label: 'Etudiants',
-      screen: const Students(),
-    ),
-    DrawerItems(
-      icon: SvgPicture.asset('assets/svgs/offres.svg'),
-      label: 'Offres',
-      screen: const Offers(),
-    ),
-    DrawerItems(
-      icon: SvgPicture.asset('assets/svgs/settings.svg'),
-      label: 'Settings',
-      screen: Settings(),
-    ),
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +32,7 @@ class BaseScreen extends StatelessWidget {
       ),
       drawer: Drawer(
         child: ListView.builder(
-            itemCount: drawerItems.length + 1,
+            itemCount: AppData.drawerItems.length + 1,
             physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) {
               if (index == 0) {
@@ -81,9 +48,9 @@ class BaseScreen extends StatelessWidget {
                 return Padding(
                   padding: const EdgeInsets.only(left: 20),
                   child: ListTile(
-                    leading: drawerItems[id].icon,
+                    leading: AppData.drawerItems[id].icon,
                     title: Text(
-                      drawerItems[id].label,
+                      AppData.drawerItems[id].label,
                       style: Theme.of(context).textTheme.titleMedium!.copyWith(
                             fontWeight: FontWeight.normal,
                           ),
@@ -97,7 +64,7 @@ class BaseScreen extends StatelessWidget {
             }),
       ),
       body: GetBuilder<SideBarController>(builder: (controller) {
-        return drawerItems[controller.currentScreen].screen;
+        return AppData.drawerItems[controller.currentScreen].screen;
       }),
     );
   }
@@ -116,16 +83,4 @@ class BaseScreen extends StatelessWidget {
       )),
     );
   }
-}
-
-class DrawerItems {
-  SvgPicture icon;
-  String label;
-  Widget screen;
-
-  DrawerItems({
-    required this.icon,
-    required this.label,
-    required this.screen,
-  });
 }

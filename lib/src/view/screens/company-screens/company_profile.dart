@@ -23,9 +23,9 @@ class CompanyProfile extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const CustomProfileIntroduction(
-              profileTitle: 'Compgemini',
-              profileSubTitle: 'comgemini@gmail.com',
-              profileImage: 'assets/images/companyLogo-Compgemini.png',
+              profileTitle: 'Oracle',
+              profileSubTitle: 'oracle@gmail.com',
+              profileImage: 'assets/images/oracle-test.png',
               profileButtonText: 'Contactez-nous',
               // profileButtonClicked: directToEmail(),
             ),

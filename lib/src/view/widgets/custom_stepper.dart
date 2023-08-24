@@ -3,7 +3,6 @@
 // found in the LICENSE file.
 
 import "package:flutter/material.dart";
-import "package:jobitday/view/widgets/custom_button.dart";
 
 // TODO(dragostis): Missing functionality:
 //   * mobile horizontal mode with adding/removing steps

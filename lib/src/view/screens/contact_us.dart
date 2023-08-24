@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:jobitday/view/screens/auth/sign_up.dart';
-import 'package:jobitday/view/widgets/custom_message_input.dart';
+
+import '../../view/screens/auth/sign_up.dart';
+import '../widgets/custom_message_input.dart';
 
 import '../widgets/custom_button.dart';
 import '../widgets/custom_input.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:jobitday/view/widgets/custom_input.dart';
+import '../../widgets/custom_input.dart';
 
 import '../../widgets/custom_button.dart';
 import '../../widgets/custom_password_input.dart';

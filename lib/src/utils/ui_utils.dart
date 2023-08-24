@@ -10,11 +10,14 @@ class BackIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-        onTap: () => Get.back(),
-        child: Stack(children: [
+      onTap: () => Get.back(),
+      child: Stack(
+        children: [
           CircleAvatar(
               backgroundColor: Colors.transparent,
               child: SvgPicture.asset('assets/svgs/back-arrow.svg')),
-        ]));
+        ],
+      ),
+    );
   }
 }

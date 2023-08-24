@@ -18,26 +18,28 @@ class Settings extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 40),
-                child: Text(
-                  'Settings',
-                  style: Theme.of(context).textTheme.titleLarge,
+          child: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 40),
+                  child: Text(
+                    'Settings',
+                    style: Theme.of(context).textTheme.titleLarge,
+                  ),
                 ),
-              ),
-              Text(
-                'Account',
-                style: Theme.of(context)
-                    .textTheme
-                    .labelLarge!
-                    .copyWith(fontWeight: FontWeight.w600),
-              ),
-              const SizedBox(height: 20),
-              Expanded(
-                child: ListView.builder(
+                Text(
+                  'Account',
+                  style: Theme.of(context)
+                      .textTheme
+                      .labelLarge!
+                      .copyWith(fontWeight: FontWeight.w600),
+                ),
+                const SizedBox(height: 20),
+                ListView.builder(
+                  shrinkWrap: true,
                   physics: const BouncingScrollPhysics(),
                   itemCount: acountItems.length,
                   itemBuilder: (context, index) => Padding(
@@ -47,8 +49,8 @@ class Settings extends StatelessWidget {
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

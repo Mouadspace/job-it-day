@@ -56,7 +56,9 @@ class CustomProfileIntroduction extends StatelessWidget {
                     // I have some shades in this button and i don't want them.
                     padding: const EdgeInsets.symmetric(
                         vertical: 15, horizontal: 25),
-                    onPressed: () {},
+                    onPressed: () {
+                      debugPrint('button pressed');
+                    },
                     textColor: Colors.white,
                     color: const Color(0xFF74a2cd),
                     shape: RoundedRectangleBorder(
@@ -80,6 +82,8 @@ class CustomProfileIntroduction extends StatelessWidget {
             child: Column(
               children: [
                 Container(
+                  width: 130,
+                  height: 130,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     border: Border.all(
@@ -89,14 +93,9 @@ class CustomProfileIntroduction extends StatelessWidget {
                     borderRadius: BorderRadius.circular(70),
                   ),
                   child: ClipRRect(
-                    // Use ClipRRect to clip the image to the rounded border
                     borderRadius: BorderRadius.circular(70),
                     child: Image.asset(
                       profileImage,
-                      fit: BoxFit
-                          .cover, // Maintain aspect ratio and cover the container
-                      width: 130,
-                      height: 130,
                     ),
                   ),
                 ),
