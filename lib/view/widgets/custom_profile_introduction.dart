@@ -60,7 +60,7 @@ class CustomProfileIntroduction extends StatelessWidget {
                     textColor: Colors.white,
                     color: const Color(0xFF74a2cd),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(40.0),
+                      borderRadius: BorderRadius.circular(12.0),
                     ),
                     child: Text(
                       profileButtonText,

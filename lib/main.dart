@@ -7,6 +7,8 @@ import 'utils/mybindings.dart';
 import 'view/screens/auth/sign_up.dart';
 import 'view/screens/contact_us.dart';
 import 'view/screens/company_profile.dart';
+import 'view/screens/see_all_posts.dart';
+import 'view/screens/specific_annoucement_company.dart';
 import 'view/screens/student_profile.dart';
 import 'view/screens/test_screen.dart';
 import 'view/screens/auth/sign_in.dart';
@@ -66,7 +68,7 @@ class MyApp extends StatelessWidget {
       initialBinding: MyBindings(),
       initialRoute: '/',
       getPages: [
-        GetPage(name: '/', page: () => const OnBording()),
+        // GetPage(name: '/', page: () => const OnBording()),
         GetPage(name: "/user", page: () => const UserType()),
         GetPage(name: "/signin", page: () => const SignIn()),
         GetPage(name: "/signup", page: () => const SignUp()),
@@ -80,6 +82,10 @@ class MyApp extends StatelessWidget {
         GetPage(name: "/success_page", page: () => const InscriptionDone()),
         GetPage(name: "/base", page: () => BaseScreen()),
         GetPage(name: "/edit_profile", page: () => EditProfile()),
+        GetPage(
+            name: "/show_spcific_company_post",
+            page: () => const ShowSpecificCompanyPost()),
+        GetPage(name: "/", page: () => const SeeAllPosts()),
       ],
     );
   }
