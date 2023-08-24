@@ -12,7 +12,7 @@ class SkillCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(12),
         child: Container(
@@ -42,7 +42,10 @@ class SkillCard extends StatelessWidget {
                     ),
                   ),
                 ),
-                leading: Image.asset(item.skillImage),
+                leading: ClipRRect(
+                  borderRadius: BorderRadius.circular(12),
+                  child: Image.asset(item.skillImage),
+                ),
               ),
             ],
           ),
