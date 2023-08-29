@@ -16,6 +16,7 @@ class AppTheme {
       titleMedium: h3Style,
       labelLarge: h4Style,
       labelSmall: h5Style,
+      labelMedium: h6Style,
     ),
 
     // COLORS

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../../model/companys_model.dart';
-import '../widgets/custom_comapny_profile_intro.dart';
+import '../../../model/companys_model.dart';
+import '../../widgets/custom_button.dart';
+import '../../widgets/custom_comapny_profile_intro.dart';
 
-class ShowSpecificCompanyPost extends StatelessWidget {
-  const ShowSpecificCompanyPost({super.key});
+class ShowSpecificPost extends StatelessWidget {
+  const ShowSpecificPost({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +45,7 @@ class ShowSpecificCompanyPost extends StatelessWidget {
                       child: Align(
                         alignment: Alignment.topLeft,
                         child: Text(
-                          exmapleSpecificPost.offerPosition,
+                          exmapleSpecificPost.offerPosition ?? '',
                           style: const TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w700,
@@ -62,14 +63,24 @@ class ShowSpecificCompanyPost extends StatelessWidget {
                         fontSize: 16,
                         fontWeight: FontWeight.w700,
                         color: Color(0xFF495057),
-                        height: 4,
+                        height: 2,
                       ),
                     ),
+                    const SizedBox(height: 15),
                   ],
                 ),
               ),
             ),
-            const SizedBox(height: 10),
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 15),
+              child: CustomButton(
+                  outline: false,
+                  text: 'POSTULER',
+                  onTabHandler: () => {
+                        // POSTULER ACTION
+                      }),
+            ),
           ],
         ),
       ),
