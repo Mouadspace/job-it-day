@@ -1,25 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../model/companys_model.dart';
-import '../widgets/post_card.dart';
+import '../../../model/companys_model.dart';
+import '../../widgets/company_card.dart';
 
-class SeeAllPosts extends StatefulWidget {
-  const SeeAllPosts({Key? key}) : super(key: key);
+class Companies extends StatefulWidget {
+  const Companies({Key? key}) : super(key: key);
 
   @override
-  State<SeeAllPosts> createState() => _SeeAllPostsState();
+  State<Companies> createState() => _CompaniesState();
 }
 
-class _SeeAllPostsState extends State<SeeAllPosts> {
-  List<CompanyPost> displayList = List.from(postsList);
-  // Above it need to be a list just for the offers and another exclusive for Stands.
+class _CompaniesState extends State<Companies> {
+  List<CompanyModel> displayList = List.from(companiesList);
 
   void updateList(String value) {
     setState(() {
-      displayList = postsList
+      displayList = companiesList
           .where((element) =>
-              element.offerPosition.toLowerCase().contains(value.toLowerCase()))
+              element.companyName.toLowerCase().contains(value.toLowerCase()))
           .toList();
     });
   }
@@ -35,7 +34,7 @@ class _SeeAllPostsState extends State<SeeAllPosts> {
           children: [
             const SizedBox(height: 50),
             Text(
-              'Offers & Stands',
+              'Entreprises',
               style: Theme.of(context).textTheme.titleLarge,
             ),
             const SizedBox(
@@ -71,9 +70,7 @@ class _SeeAllPostsState extends State<SeeAllPosts> {
                 physics: const BouncingScrollPhysics(),
                 itemCount: displayList.length,
                 itemBuilder: (context, index) =>
-                    AnnouncementCard(item: displayList[index]),
-                // For the offers and stands in this situation we need widgets.
-                // The offer widget shows
+                    CompanyCard(item: displayList[index]),
               ),
             ),
           ],

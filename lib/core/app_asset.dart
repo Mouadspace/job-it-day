@@ -31,6 +31,9 @@ class AppAsset {
   static const email = '$svgPath/email.svg';
   static const telephone = '$svgPath/telephone.svg';
 
+  static const rightArrow = '$svgPath/right-arrow.svg';
+  static const addIcon = '$svgPath/add-icon.svg';
+
   // IMAGES
   static const imagePath = 'assets/images';
 

@@ -3,8 +3,14 @@ import 'package:get/get.dart';
 import '../view/screens/company-screens/base_screen.dart';
 import '../view/screens/company-screens/edit_profile.dart';
 import '../view/screens/auth/sign_up.dart';
+import '../view/screens/company-screens/see_all_posts.dart';
+import '../view/screens/company-screens/specific_annoucement_company.dart';
 import '../view/screens/contact_us.dart';
 import '../view/screens/company-screens/student_profile.dart';
+import '../view/screens/student_screens/all_company_posts_to_students.dart';
+import '../view/screens/student_screens/personal_student_profile.dart';
+import '../view/screens/student_screens/see_all_companies.dart';
+import '../view/screens/student_screens/show_specific_post_to_student.dart';
 import '../view/screens/test_screen.dart';
 import '../view/screens/auth/sign_in.dart';
 import '../view/screens/user_type.dart';
@@ -19,7 +25,7 @@ class Routes {
   static const initial = '/';
 
   static final routes = [
-    GetPage(name: '/', page: () => const OnBording()),
+    // GetPage(name: '/', page: () => const OnBording()),
     GetPage(name: "/user", page: () => const UserType()),
     GetPage(name: "/signin", page: () => const SignIn()),
     GetPage(name: "/signup", page: () => const SignUp()),
@@ -32,5 +38,21 @@ class Routes {
     GetPage(name: "/success_page", page: () => const InscriptionDone()),
     GetPage(name: "/base", page: () => BaseScreen()),
     GetPage(name: "/edit_profile", page: () => EditProfile()),
+    // GetPage(name: "/see_all_posts", page: () => const SeeAllPosts()),
+    GetPage(
+        name: "/specific_announcement_company",
+        page: () => const ShowSpecificCompanyPost()),
+    GetPage(
+        name: "/specific_post_to_student",
+        page: () => const ShowSpecificPost()),
+    GetPage(
+        name: "/show_all_companys_posts_to_student",
+        page: () => const ShowAllCompanyPostsToStudent()),
+    GetPage(
+        name: "/show_all_companies_to_student", page: () => const Companies()),
+    GetPage(
+        name: "/personal_student_profile",
+        page: () => const PersonalStudentProfile()),
+    GetPage(name: "/", page: () => const SeeAllPosts()),
   ];
 }

@@ -23,7 +23,7 @@ class AnnouncementCard extends StatelessWidget {
             children: [
               ListTile(
                 contentPadding:
-                    const EdgeInsets.only(left: 20.0, top: 8.0, bottom: 8.0),
+                    const EdgeInsets.symmetric(horizontal: 20.0, vertical: 8.0),
                 title: Text(
                   item.title,
                   style: const TextStyle(
