@@ -96,6 +96,24 @@ List<CompanyPost> postsList = [
     applicants: 0,
   ),
   CompanyPost(
+    title: 'Offre',
+    startDate: PostDate(day: 5, month: 'juillet'),
+    endDate: PostDate(day: 7, month: 'juillet'),
+    description:
+        "Nous recherchons un étudiant senior (CI2) pour un stage. Si vous êtes passionné par le développement back-end et que vous cherchez à vous perfectionner, envoyez votre CV à nos RH.\n\nAddress-email : email@gmail.com",
+    offerPosition: 'Back-end developper',
+    intershipType: 'PFA',
+  ),
+  CompanyPost(
+    title: 'Offre',
+    startDate: PostDate(day: 5, month: 'juillet'),
+    endDate: PostDate(day: 7, month: 'juillet'),
+    description:
+        "Nous recherchons un étudiant senior (CI2) pour un stage. Si vous êtes passionné par le développement back-end et que vous cherchez à vous perfectionner, envoyez votre CV à nos RH.\n\nAddress-email : email@gmail.com",
+    offerPosition: 'Back-end developper',
+    intershipType: 'PFA',
+  ),
+  CompanyPost(
     title: 'Stande',
     startDate: PostDate(day: 15, month: 'juillet'),
     endDate: PostDate(day: 27, month: 'juillet'),
