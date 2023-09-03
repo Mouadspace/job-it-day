@@ -114,8 +114,10 @@ class _SeeAllPostsState extends State<SeeAllPosts>
                             child: ListView.builder(
                               physics: const BouncingScrollPhysics(),
                               itemCount: displayList.length,
-                              itemBuilder: (context, index) =>
-                                  ShowOffer(item: displayList[index]),
+                              itemBuilder: (context, index) => ShowOffer(
+                                item: displayList[index],
+                                user: 'company',
+                              ),
                             ),
                           ),
                         ],

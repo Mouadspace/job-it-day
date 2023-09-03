@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../core/app_color.dart';
 import '../../model/companys_model.dart';
 
 class ShowOffer extends StatelessWidget {
   final CompanyPost item;
+  final String user;
 
   const ShowOffer({
     super.key,
     required this.item,
+    required this.user,
   });
 
   @override
@@ -16,61 +19,74 @@ class ShowOffer extends StatelessWidget {
     if (item.title.toLowerCase() != 'offre') {
       return Container();
     } else {
-      return Padding(
-        padding: const EdgeInsets.symmetric(vertical: 10.0),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(12),
-          child: Container(
-            color: const Color(0xFFEBF3FA),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                ListTile(
-                  contentPadding: const EdgeInsets.symmetric(
-                      horizontal: 20.0, vertical: 8.0),
-                  title: Padding(
-                    padding: const EdgeInsets.only(bottom: 15.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+      return GestureDetector(
+        onTap: () {
+          // If the user is a student the when showing the offre
+          // he/she needs to see where to apply
+          if (user == 'company') {
+            Get.toNamed('/specific_announcement_company', arguments: item);
+          } else {
+            // Means  when it's a student
+            Get.toNamed('/specific_post_to_student', arguments: item);
+          }
+        },
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 10.0),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(12),
+            child: Container(
+              color: const Color(0xFFEBF3FA),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ListTile(
+                    contentPadding: const EdgeInsets.symmetric(
+                        horizontal: 20.0, vertical: 8.0),
+                    title: Padding(
+                      padding: const EdgeInsets.only(bottom: 15.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            item.offerPosition ?? '',
+                            style: Theme.of(context).textTheme.labelMedium,
+                          ),
+                          Text(
+                            'Company name',
+                            style: Theme.of(context).textTheme.labelSmall,
+                          ),
+                        ],
+                      ),
+                    ),
+                    subtitle: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
+                        const Text(
+                          'Publié il y’a 15 heures',
+                          style: TextStyle(
+                            color: LightThemeColor.lightGrey,
+                            fontWeight: FontWeight.normal,
+                            fontSize: 12,
+                          ),
+                        ), // When you have the variable, remove the const
                         Text(
-                          item.offerPosition ?? '',
-                          style: Theme.of(context).textTheme.labelMedium,
-                        ),
-                        Text(
-                          'Company name',
-                          style: Theme.of(context).textTheme.labelSmall,
+                          item.intershipType ?? '',
+                          style: const TextStyle(
+                            color: LightThemeColor.lightGrey,
+                            fontWeight: FontWeight.normal,
+                            fontSize: 12,
+                          ),
                         ),
                       ],
                     ),
+                    leading: ClipRRect(
+                      borderRadius: BorderRadius.circular(12),
+                      child:
+                          Image.asset('assets/images/companyLogo-default.png'),
+                    ),
                   ),
-                  subtitle: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const Text(
-                        'Publié il y’a 15 heures',
-                        style: TextStyle(
-                          color: LightThemeColor.lightGrey,
-                          fontWeight: FontWeight.normal,
-                          fontSize: 12,
-                        ),
-                      ), // When you have the variable, remove the const
-                      Text(
-                        item.intershipType ?? '',
-                        style: const TextStyle(
-                          color: LightThemeColor.lightGrey,
-                          fontWeight: FontWeight.normal,
-                          fontSize: 12,
-                        ),
-                      ),
-                    ],
-                  ),
-                  leading: ClipRRect(
-                    borderRadius: BorderRadius.circular(12),
-                    child: Image.asset('assets/images/companyLogo-default.png'),
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),

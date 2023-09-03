@@ -109,8 +109,10 @@ class _ShowAllCompanyPostsToStudentState
                             shrinkWrap: true,
                             physics: const NeverScrollableScrollPhysics(),
                             itemCount: displayList.length,
-                            itemBuilder: (context, index) =>
-                                ShowOffer(item: displayList[index]),
+                            itemBuilder: (context, index) => ShowOffer(
+                              item: displayList[index],
+                              user: 'student',
+                            ),
                           ),
                         ],
                       ),

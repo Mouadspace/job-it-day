@@ -19,6 +19,7 @@ class CompanyPost {
   String description;
   String? offerPosition = '';
   String? intershipType = '';
+  int? applicants = 0;
 
   CompanyPost({
     required this.title,
@@ -27,6 +28,7 @@ class CompanyPost {
     required this.description,
     required this.offerPosition, // This one is '' for Stands
     this.intershipType, // This one is '' for Stands
+    this.applicants, // number of applicants for an offre
   });
 }
 
@@ -51,6 +53,7 @@ List<CompanyPost> postsList = [
         "Formation : Bac+3 à Bac + 5 dans un domaine de l'IT Bon niveau en Français et en Anglais, Espagnole souhaité Une certification dans un des domaines IT est un plus Forte autonomie, créativité, rapidité de compréhension et de montée en compétenceUne première séléction se fera sur CV",
     offerPosition: 'Web developper',
     intershipType: 'PFE',
+    applicants: 5,
   ),
   CompanyPost(
     title: 'Offre',
@@ -60,6 +63,7 @@ List<CompanyPost> postsList = [
         "Formation : Bac+3 à Bac + 5 dans un domaine de l'IT Bon niveau en Français et en Anglais, Espagnole souhaité Une certification dans un des domaines IT est un plus Forte autonomie, créativité, rapidité de compréhension et de montée en compétenceUne première séléction se fera sur CV",
     offerPosition: 'Web developper',
     intershipType: 'PFE',
+    applicants: 7,
   ),
   CompanyPost(
     title: 'Offre',
@@ -69,6 +73,7 @@ List<CompanyPost> postsList = [
         "Formation : Bac+3 à Bac + 5 dans un domaine de l'IT Bon niveau en Français et en Anglais, Espagnole souhaité Une certification dans un des domaines IT est un plus Forte autonomie, créativité, rapidité de compréhension et de montée en compétenceUne première séléction se fera sur CV",
     offerPosition: 'Web developper',
     intershipType: 'PFE',
+    applicants: 9,
   ),
   CompanyPost(
     title: 'Offre',
@@ -78,6 +83,7 @@ List<CompanyPost> postsList = [
         "Formation : Bac+3 à Bac + 5 dans un domaine de l'IT Bon niveau en Français et en Anglais, Espagnole souhaité Une certification dans un des domaines IT est un plus Forte autonomie, créativité, rapidité de compréhension et de montée en compétenceUne première séléction se fera sur CV",
     offerPosition: 'Web developper',
     intershipType: 'PFE',
+    applicants: 10,
   ),
   CompanyPost(
     title: 'Offre',
@@ -87,6 +93,7 @@ List<CompanyPost> postsList = [
         "Nous recherchons un étudiant senior (CI2) pour un stage. Si vous êtes passionné par le développement back-end et que vous cherchez à vous perfectionner, envoyez votre CV à nos RH.\n\nAddress-email : email@gmail.com",
     offerPosition: 'Back-end developper',
     intershipType: 'PFA',
+    applicants: 0,
   ),
   CompanyPost(
     title: 'Stande',
