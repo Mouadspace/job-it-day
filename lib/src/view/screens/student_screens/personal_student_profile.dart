@@ -106,6 +106,7 @@ class PersonalStudentProfile extends StatelessWidget {
                                   text: 'AJOUTER EXPERIENCE',
                                   onTabHandler: () {
                                     // Add the expérience to the student.
+                                    // Table Experience, id_student o id_exp (auto incremented)
                                   })
                             ],
                           ),

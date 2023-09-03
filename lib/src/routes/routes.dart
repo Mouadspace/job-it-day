@@ -1,8 +1,10 @@
 import 'package:get/get.dart';
 
 import '../view/screens/company-screens/base_screen.dart';
+import '../view/screens/company-screens/company_profile.dart';
 import '../view/screens/company-screens/edit_profile.dart';
 import '../view/screens/auth/sign_up.dart';
+import '../view/screens/company-screens/see_all_applicants_of_offre.dart';
 import '../view/screens/company-screens/see_all_posts.dart';
 import '../view/screens/company-screens/specific_annoucement_company.dart';
 import '../view/screens/contact_us.dart';
@@ -38,7 +40,7 @@ class Routes {
     GetPage(name: "/success_page", page: () => const InscriptionDone()),
     GetPage(name: "/base", page: () => BaseScreen()),
     GetPage(name: "/edit_profile", page: () => EditProfile()),
-    // GetPage(name: "/see_all_posts", page: () => const SeeAllPosts()),
+    GetPage(name: "/see_all_posts", page: () => const SeeAllPosts()),
     GetPage(
         name: "/specific_announcement_company",
         page: () => const ShowSpecificCompanyPost()),
@@ -53,6 +55,11 @@ class Routes {
     GetPage(
         name: "/personal_student_profile",
         page: () => const PersonalStudentProfile()),
-    GetPage(name: "/", page: () => const SeeAllPosts()),
+    GetPage(
+        name: "/company_personal_profile", page: () => const CompanyProfile()),
+    GetPage(
+        name: "/see_all_applicants_of_offre",
+        page: () => const SeeAllApplicants()),
+    GetPage(name: "/", page: () => const CompanyProfile()),
   ];
 }
