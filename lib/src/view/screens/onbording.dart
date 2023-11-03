@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_timer_countdown/flutter_timer_countdown.dart';
 import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher.dart';
 
+import '../../../core/app_data.dart';
 import '../widgets/custom_button.dart';
 
 class OnBording extends StatelessWidget {
-  const OnBording({super.key});
+  OnBording({super.key});
+
+  final Uri _url = Uri.parse(AppData.url);
+  Future<void> _launchUrl() async {
+    if (!await launchUrl(_url)) {
+      throw Exception('Could not launch $_url');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,23 +62,48 @@ class OnBording extends StatelessWidget {
                     ],
                   ),
                 ),
+                const SizedBox(height: 20),
+                TimerCountdown(
+                  timeTextStyle: Theme.of(context).textTheme.titleLarge,
+                  colonsTextStyle: const TextStyle(
+                    color: Colors.transparent,
+                  ),
+                  format: CountDownTimerFormat.daysHoursMinutesSeconds,
+                  endTime: DateTime.now().add(
+                    const Duration(
+                      days: 5,
+                      hours: 14,
+                      minutes: 27,
+                      seconds: 34,
+                    ),
+                  ),
+                  daysDescription: "Jours",
+                  hoursDescription: "Heures",
+                  minutesDescription: "Minutes",
+                  secondsDescription: "Secondes",
+                  onEnd: () {
+                    debugPrint("Timer finished");
+                  },
+                ),
                 const SizedBox(height: 40),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 40),
                   child: CustomButton(
-                      outline: true,
-                      text: 'SE CONNECTER',
-                      onTabHandler: () => Get.toNamed('/base')),
+                    outline: true,
+                    text: 'DECOUVRIR L\'EVENEMENT',
+                    onTabHandler: () => Get.toNamed('/base'),
+                  ),
                 ),
                 Padding(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 40, vertical: 16),
                   child: CustomButton(
                     outline: false,
-                    text: 'S\'INSCRIRE',
-                    onTabHandler: () => Get.toNamed('/user'),
+                    text: 'VISITER LE SITE WEB',
+                    // onTabHandler: () => Get.toNamed('/user'),
+                    onTabHandler: _launchUrl,
                   ),
-                )
+                ),
               ],
             ),
           ),

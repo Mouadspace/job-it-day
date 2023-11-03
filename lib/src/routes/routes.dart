@@ -25,7 +25,7 @@ class Routes {
   static const initial = '/';
 
   static final routes = [
-    // GetPage(name: '/', page: () => const OnBording()),
+    GetPage(name: '/', page: () => OnBording()),
     GetPage(name: "/user", page: () => const UserType()),
     GetPage(name: "/signin", page: () => const SignIn()),
     GetPage(name: "/signup", page: () => const SignUp()),
@@ -34,9 +34,11 @@ class Routes {
     GetPage(name: "/contact_us", page: () => const ContactUs()),
     GetPage(name: "/students", page: () => const Students()),
     GetPage(name: "/student_profile", page: () => const StudentProfile()),
+    // GetPage(name: "/", page: () => const StudentProfile()),
     GetPage(name: "/error_page", page: () => const SomethingWrong()),
     GetPage(name: "/success_page", page: () => const InscriptionDone()),
     GetPage(name: "/base", page: () => BaseScreen()),
+    // GetPage(name: "/", page: () => BaseScreen()),
     GetPage(name: "/edit_profile", page: () => EditProfile()),
     // GetPage(name: "/see_all_posts", page: () => const SeeAllPosts()),
     GetPage(
@@ -53,6 +55,7 @@ class Routes {
     GetPage(
         name: "/personal_student_profile",
         page: () => const PersonalStudentProfile()),
-    GetPage(name: "/", page: () => const SeeAllPosts()),
+    // GetPage(name: "/posts", page: () => const SeeAllPosts()),
+    // GetPage(name: "/", page: () => const SeeAllPosts()),
   ];
 }

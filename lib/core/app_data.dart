@@ -12,6 +12,8 @@ import 'app_color.dart';
 class AppData {
   AppData._();
 
+  // URL LAUNCHER
+  static const String url = 'https://www.google.com';
   // PRESENTATION
   static const String presentation = '';
 
