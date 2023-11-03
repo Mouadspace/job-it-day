@@ -38,6 +38,7 @@ dependencies:
   get: ^4.6.5
   flutter_timer_countdown: ^1.0.6
   url_launcher: ^6.1.11
+  flutter_onboarding_slider: ^1.0.11
 
 dev_dependencies:
   flutter_test:

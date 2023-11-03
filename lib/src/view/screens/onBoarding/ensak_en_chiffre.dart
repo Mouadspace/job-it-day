@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:jobitday/core/app_data.dart';
 
-import '../../model/ensak_stats_model.dart';
+import '../../../model/ensak_stats_model.dart';
 
 class EnsakChiffre extends StatelessWidget {
   const EnsakChiffre({super.key});
@@ -17,7 +18,7 @@ class EnsakChiffre extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(height: 110),
+                const SizedBox(height: 50),
                 Text(
                   'ENSAK en chiffres',
                   style: Theme.of(context).textTheme.titleLarge,
@@ -48,10 +49,13 @@ class EnsakChiffre extends StatelessWidget {
                   style: Theme.of(context).textTheme.titleLarge,
                 ),
                 const SizedBox(
-                  height: 12,
+                  height: 20,
                 ),
                 const Text(
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                  AppData.presentation,
+                ),
+                const SizedBox(
+                  height: 100,
                 ),
               ],
             ),
@@ -80,7 +84,7 @@ class CircleColumn extends StatelessWidget {
       children: [
         CircleAvatar(
           backgroundColor: Theme.of(context).colorScheme.primary,
-          radius: 45,
+          radius: 40,
           child: SvgPicture.asset(icon),
         ),
         const SizedBox(height: 8),

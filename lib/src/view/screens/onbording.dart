@@ -47,7 +47,7 @@ class OnBording extends StatelessWidget {
                             color: Theme.of(context).colorScheme.primary),
                       ),
                       const TextSpan(
-                          text: 'Le\nVendredi 16 Decembre 2023\n',
+                          text: 'Le\nMercredi 22 Novembre 2023\n',
                           style: TextStyle(
                             height: 2,
                           )),
@@ -64,7 +64,10 @@ class OnBording extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 TimerCountdown(
-                  timeTextStyle: Theme.of(context).textTheme.titleLarge,
+                  timeTextStyle:
+                      Theme.of(context).textTheme.titleLarge!.copyWith(
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
                   colonsTextStyle: const TextStyle(
                     color: Colors.transparent,
                   ),
@@ -91,7 +94,7 @@ class OnBording extends StatelessWidget {
                   child: CustomButton(
                     outline: true,
                     text: 'DECOUVRIR L\'EVENEMENT',
-                    onTabHandler: () => Get.toNamed('/base'),
+                    onTabHandler: () => Get.toNamed('/base_screen'),
                   ),
                 ),
                 Padding(
