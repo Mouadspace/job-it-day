@@ -18,6 +18,17 @@ class OnBording extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    DateTime now = DateTime.now();
+    DateTime eventDate = DateTime(2023, 11, 22);
+    DateTime timeLeft = DateTime(
+      0,
+      0,
+      eventDate.day - now.day - 1,
+      23 - now.hour,
+      59 - now.minute,
+      60 - now.second,
+    );
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -73,11 +84,11 @@ class OnBording extends StatelessWidget {
                   ),
                   format: CountDownTimerFormat.daysHoursMinutesSeconds,
                   endTime: DateTime.now().add(
-                    const Duration(
-                      days: 5,
-                      hours: 14,
-                      minutes: 27,
-                      seconds: 34,
+                    Duration(
+                      days: timeLeft.day,
+                      hours: timeLeft.hour,
+                      minutes: timeLeft.minute,
+                      seconds: timeLeft.second,
                     ),
                   ),
                   daysDescription: "Jours",
